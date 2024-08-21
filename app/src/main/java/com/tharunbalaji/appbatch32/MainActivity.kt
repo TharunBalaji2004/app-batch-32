@@ -1,20 +1,13 @@
 package com.tharunbalaji.appbatch32
 
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-// ANDROID BASICS 1
-// Activity - screen [f1, f2, f3, f4]
-// Fragment - screen
-
-// Home Activity -> Settings Activity
-// Intent - Implicit Intent, Explicit Intent
-
+// ANDROID BASICS DAY 2
+// Intent (contd..), ViewBinding, Login Page Validation, Shared Preferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,8 +20,11 @@ class MainActivity : AppCompatActivity() {
         btnHome = findViewById(R.id.btn_home)
 
         btnHome.setOnClickListener {
-            //val github = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/TharunBalaji2004"))
             val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("name","Tharun")
+            intent.putExtra("age", 21)
+            intent.putExtra("gender", 'M')
+            intent.putExtra("fees", true)
             startActivity(intent)
             finish()
         }
